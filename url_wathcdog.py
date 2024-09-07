@@ -28,7 +28,7 @@ def print_logo():
 print_logo()
 
 # Define the path to the websites configuration file
-WEBSITES_CONFIG_FILE = '/workspaces/python-applications/webapp/URL_WatchDog/config/websites_config.json'
+WEBSITES_CONFIG_FILE = '/workspaces/python-applications/URL_WatchDog/config/websites_config.json'
 
 load_dotenv()
 
@@ -110,7 +110,7 @@ def monitor_website(website):
     log_file = f'{website["name"].lower().replace(" ", "_")}.log'
     logger_name = f'{website["name"]}_{datetime.now().strftime("%Y%m%d%H%M%S")}'
     logger = logging.getLogger(logger_name)
-    file_handler = RotatingFileHandler('/workspaces/python-applications/webapp/URL_WatchDog/Logs/' + log_file, maxBytes=1000000, backupCount=5)
+    file_handler = RotatingFileHandler('/workspaces/python-applications/URL_WatchDog/logs/' + log_file, maxBytes=1000000, backupCount=5)
     formatter = logging.Formatter('%(asctime)s - %(message)s')
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
@@ -158,7 +158,7 @@ def signal_handler(signum, frame):
     except Exception as e:
         exception = e
 
-    with open('/workspaces/python-applications/webapp/URL_WatchDog/Logs/error.log', 'a') as f:
+    with open('/workspaces/python-applications/URL_WatchDog/logs/error.log', 'a') as f:
         now = datetime.now()
         f.write(f'Script terminated at {now.strftime("%Y-%m-%d %H:%M:%S")}\n')
         if signum == signal.SIGINT:
