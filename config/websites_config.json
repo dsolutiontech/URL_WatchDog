@@ -1,0 +1,15 @@
+[
+    {
+        "url": "https://192.168.20.2:8006",
+        "name": "TEST 1"
+    },
+    {
+        "url": "https://www.facebook.com",
+        "name": "SSNL TESTING 2",
+        "keyword": "Facebook"
+    },
+    {
+        "url": "192.11.172.110",
+        "name": "DR_APP_SERVER"
+    }
+]
